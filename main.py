@@ -1,7 +1,6 @@
 from pydantic import Field
-from speckle_automate import AutomationContext, AutomateBase
+from speckle_automate import AutomationContext, AutomateBase, execute_automate_function
 from specklepy.objects import Base
-
 from Utilities.helpers import flatten_base, speckle_print
 from Utilities.spreadsheet import read_rules_from_spreadsheet
 from rules import apply_rules_to_objects
@@ -61,4 +60,4 @@ if __name__ == "__main__":
     # NOTE: always pass in the automate function by its reference, do not invoke it!
 
     # pass in the function reference with the inputs schema to the executor
-    automate_function(automate_function, FunctionInputs)
+    execute_automate_function(automate_function, FunctionInputs)
